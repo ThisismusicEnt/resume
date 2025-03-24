@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Justin PuffPaff – Retro 3D Resume + Python Games + Easter Eggs</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Load Pyodide from CDN for .py usage -->
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
+</head>
+<body>
+
+  <!-- MOVING STARFIELD & GRID -->
+  <div id="starfield-layer"></div>
+  <div id="grid-layer"></div>
+
+  <!-- GLOBAL GLITCH Overlay -->
+  <div class="global-glitch"></div>
+
+  <!-- AUDIO Toggle & Music -->
+  <div class="audio-toggle float-bob" id="audioToggle">[ MUTE ]</div>
+  <audio id="bgMusic" src="chiptune.wav" loop></audio>
+
+  <!-- FIXED HERO WIREFRAME (10-layer thickness for 3D) -->
+  <section class="hero-wireframe float-bob" id="heroWireframe">
+    <div class="wireframe-stack">
+      <!-- Ten layers, each offset in Z for thickness -->
+      <img src="JustinPic1.png" class="wf-layer" alt="Wireframe" />
+      <img src="JustinPic1.png" class="wf-layer" alt="Wireframe" />
+      <img src="JustinPic1.png" class="wf-layer" alt="Wireframe" />
+      <img src="JustinPic1.png" class="wf-layer" alt="Wireframe" />
+      <img src="JustinPic1.png" class="wf-layer" alt="Wireframe" />
+      <img src="JustinPic1.png" class="wf-layer" alt="Wireframe" />
+      <img src="JustinPic1.png" class="wf-layer" alt="Wireframe" />
+      <img src="JustinPic1.png" class="wf-layer" alt="Wireframe" />
+      <img src="JustinPic1.png" class="wf-layer" alt="Wireframe" />
+      <img src="JustinPic1.png" class="wf-layer" alt="Wireframe" />
+    </div>
+    <div class="experiment-label">EXPERIMENT 95-21-P</div>
+  </section>
+
+  <!-- COMMANDS KEY SECTION -->
+  <section class="commands-key-section" id="commandsSection">
+    <div class="commands-title-3d">
+      <div class="layer">TERMINAL COMMANDS</div>
+      <div class="layer">TERMINAL COMMANDS</div>
+      <div class="layer">TERMINAL COMMANDS</div>
+      <div class="layer">TERMINAL COMMANDS</div>
+      <div class="layer">TERMINAL COMMANDS</div>
+    </div>
+    <div class="rules-list">
+      <p>Type these commands in the terminal:</p>
+      <ul>
+        <li><strong>start</strong> – Begin typed resume</li>
+        <li><strong>pause</strong>, <strong>continue</strong> – Control typed lines</li>
+        <li><strong>end</strong> – Passcode riddle prompt</li>
+        <li><strong>python-game start</strong> – Rock-Paper-Scissors, then type <em>rock/paper/scissors</em></li>
+        <li><strong>snake up</strong>, <strong>pong left</strong>, <strong>invaders shoot</strong>, etc.</li>
+        <li><strong>python-calc 2+2</strong> – Calculator</li>
+        <li><strong>egg1</strong> – Reveal a special 3D Easter Egg #1</li>
+        <li><strong>dnd start</strong>, <strong>dnd explore</strong>, <strong>dnd fight</strong>, <strong>dnd status</strong>, <strong>dnd potion</strong> – Epic D&D Text Adventure!</li>
+        <li><strong>wizard start</strong>, <strong>wizard look</strong>, <strong>wizard go [direction]</strong>, <strong>wizard take</strong>, <strong>wizard use [item]</strong>, <strong>wizard attack</strong> – Play 'The Cavern of the Evil Wizard'</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- RETRO COMPUTER & TERMINAL -->
+  <section class="computer-section float-bob">
+    <div class="computer-wrapper">
+      <img src="computer.png" alt="Retro Computer" class="computer-img" />
+      <div class="monitor-screen float-bob">
+        <div class="monitor-fade"></div>
+        <div class="glitch-overlay"></div>
+        
+        <!-- Terminal area pinned so #linesContainer scrolls, input is fixed at bottom -->
+        <div class="terminal-area">
+          <div id="linesContainer"></div>
+          <div class="input-bar">
+            <span>CMD&gt;</span>
+            <input type="text" id="commandInput" placeholder="Type a command...">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PASSCODE RIDDLE OVERLAY -->
+  <div class="warning-overlay" id="warningOverlay">
+    <div class="warning-content float-bob">
+      <h2>RIDDLE:</h2>
+      <p>
+        I make up every site you see,<br/>
+        from ancient posts to forms with glee,<br/>
+        I’m not Java, nor Python, nor C,<br/>
+        but I define the structure for all to read.<br/>
+        What am I?
+      </p>
+      <label>Answer:
+        <input type="password" id="passcodeInput">
+      </label>
+      <button id="passcodeBtn">Enter</button>
+      <div class="access-status" id="accessStatus"></div>
+    </div>
+  </div>
+
+  <!-- FORMAL RESUME -->
+  <section class="formal-resume" id="formalResume">
+    <h1>Justin PuffPaff – Formal Resume</h1>
+    <p class="resume-paragraph">
+      My name is Justin PuffPaff, a Web Developer with experience in HTML, CSS, JS, and Python.
+      Passionate about unique, interactive user experiences and creative designs.
+    </p>
+    <div class="resume-info">
+      <div class="resume-block">
+        <h2>Skills</h2>
+        <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>Python</li>
+        </ul>
+      </div>
+      <div class="resume-block">
+        <h2>Experience</h2>
+        <p><strong>This Is Music LLC (2019–Present)</strong></p>
+        <ul>
+          <li>Developed & maintained websites & apps</li>
+          <li>Created responsive UIs</li>
+          <li>Collaborated with designers & engineers</li>
+        </ul>
+      </div>
+      <div class="resume-block">
+        <h2>Education & Certifications</h2>
+        <ul>
+          <li>Meta Back-end Dev Certification</li>
+          <li>Front-end Dev Certification</li>
+          <li>Python Dev Certification</li>
+        </ul>
+      </div>
+      <div class="resume-block">
+        <h2>Contact</h2>
+        <ul>
+          <li>Email: CEO@ThisIsMusic.org</li>
+          <li>Phone: 615-604-0683</li>
+          <li>LinkedIn: linkedin.com/in/justin-puffpaff</li>
+          <li>GitHub: github.com/ThisIsMusic</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+ <!-- EASTER EGG #1 SECTION (Glitching Cube) -->
+<section class="egg-section float-bob" id="eggSection1">
+  <div class="glitch-cube-container">
+    <div class="glitch-cube">
+      <div class="face front"></div>
+      <div class="face back"></div>
+      <div class="face left"></div>
+      <div class="face right"></div>
+      <div class="face top"></div>
+      <div class="face bottom"></div>
+    </div>
+    <div class="egg-label">EASTER EGG #1 – GLITCH CUBE</div>
+  </div>
+</section>
+
+<!-- EASTER EGG #5 SECTION -->
+<section class="egg-section glitch-fullscreen" id="eggSection5">
+  <div class="glitch-message">
+    SYSTEM BREACH DETECTED<br/>
+    <span class="small">CODE: E-99Ω</span>
+  </div>
+</section>
+
+
+  <script src="scripts.js"></script>
+  <div id="ambientGlitchOverlay"></div>
+</body>
+</html>
+
