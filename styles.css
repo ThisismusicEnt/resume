@@ -9,7 +9,7 @@
 body {
   background: #000;
   color: #0f0;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Fira Code', 'Courier New', Courier, monospace;
   min-height: 200vh;
   overflow-x: hidden;
 }
@@ -218,9 +218,16 @@ body {
   height: 36%;
   background: #000;
   border: 1px solid #0f0;
+  border-radius: 4px;
+  box-shadow: 0 0 20px rgba(0,255,0,0.4);
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  transition: box-shadow 0.3s ease;
+}
+
+.monitor-screen:hover {
+  box-shadow: 0 0 30px rgba(0,255,0,0.7);
 }
 .monitor-fade {
   position: absolute;
@@ -285,6 +292,11 @@ body {
   font-family: inherit;
   font-size: 1rem;
   caret-color: #0f0;
+  transition: box-shadow 0.2s ease;
+}
+
+#commandInput:focus {
+  box-shadow: 0 0 5px #0f0;
 }
 
 /* PASSCODE OVERLAY */
