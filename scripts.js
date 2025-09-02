@@ -239,6 +239,14 @@ function handleCommand(cmd) {
       warningOverlay.style.display = 'flex';
       break;
 
+    case 'help':
+      linesContainer.textContent += "\nAvailable commands:\nstart, pause, continue, end, python-game, python-calc, python-snake, python-pong, python-invaders, python-adventure, egg1, egg2, egg5, clear, help\n";
+      break;
+
+    case 'clear':
+      linesContainer.textContent = '';
+      break;
+
     // --------------------------------------
     // PYTHON GAMES
     // --------------------------------------
